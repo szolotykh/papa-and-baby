@@ -11,13 +11,16 @@
 		<div class="w3-col s10 l6 w3-center">
 			<form class="w3-container">
 				Lovers
-				<input class="w3-input" type = "text" ng-model="iLover1" required></input>
-				<input class="w3-input" type = "text" ng-model="iLover2" required></input>
+				<input class="w3-input w3-margin" type = "text" ng-model="iLover1" required></input>
+				<input class="w3-input w3-margin" type = "text" ng-model="iLover2" required></input>
 
 				Start day
-				<input class="w3-input" type = "date" id = "iStartDate" ng-model="iStartDate" required></input>
+				<dateinputdir class = "w3-margin" day = "day" month = "month" year = "year"></dateinputdir>
 
-				<input class="w3-input" type = "button" value = "Continue" id = "bContinue"></input>
+				<input class = "w3-input w3-margin" type = "button" value = "Continue" id = "bContinue"></input>
+				
+				
+				{{day}} {{month}} {{year}}
 			</form>
 		</div>
 		<div class="w3-col s1 l3">&nbsp;</div>
