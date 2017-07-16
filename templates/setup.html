@@ -9,18 +9,15 @@
 	<div class="w3-row" style="height:100%;font-size: 30px; font-family: 'Dynalight';">
 		<div class="w3-col s1 l3">&nbsp;</div>
 		<div class="w3-col s10 l6 w3-center">
-			<form class="w3-container">
-				Lovers
-				<input class="w3-input w3-margin" type = "text" ng-model="iLover1" required></input>
-				<input class="w3-input w3-margin" type = "text" ng-model="iLover2" required></input>
+			<form name = "fInputs" class="w3-container">
+				<span>Lovers</span>
+				<input name = "iLover1" class="w3-input w3-margin" type = "text" ng-model="iLover1" maxlength="40" required/>
+				<input name = "iLover2" class="w3-input w3-margin" type = "text" ng-model="iLover2" maxlength="40" required/>
 
-				Start day
-				<dateinputdir class = "w3-margin" day = "day" month = "month" year = "year"></dateinputdir>
-
-				<input class = "w3-input w3-margin" type = "button" value = "Continue" id = "bContinue"></input>
-				
-				
-				{{day}} {{month}} {{year}}
+				<span>Start day</span>
+				<dateinputdir class = "w3-margin" date = "date"/>
+				<input class = "w3-input w3-margin" type = "button" value = "Continue" id = "bContinue" 
+					ng-disabled="date=='Invalid Date' || !fInputs.iLover1.$valid || !fInputs.iLover2.$valid"/>
 			</form>
 		</div>
 		<div class="w3-col s1 l3">&nbsp;</div>

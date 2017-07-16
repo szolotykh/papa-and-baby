@@ -5,14 +5,12 @@ angular.module('PapaAndBaby')
         replace: true,
         templateUrl: 'templates/directives/date-input-directive.html',
         scope: {
-            day: '=',
-            month: '=',
-            year: '=',
-            selectedDate: '='
+            date: '='
         },
         controller: ['$scope', function($scope){
         }],
         link: function link($scope, element, attrs) {
+            $scope.date = new Date ("");
             // Years
             $scope.years = [];
             var currentDate = new Date ();
@@ -51,14 +49,20 @@ angular.module('PapaAndBaby')
             }
             _UpdateDays (31);
 
+            $scope.OnDayChange = function(){
+                $scope.date = new Date ($scope.year, $scope.month, $scope.day);
+            };
+
             $scope.OnMonthsChange = function(){
                 _UpdateDays ($scope.Months[$scope.month].getDays ($scope.year));
+                $scope.date = new Date ($scope.year, $scope.month, $scope.day);
             };
 
             $scope.OnYearChange = function(){
                 if ($scope.month != undefined){
                     _UpdateDays ($scope.Months[$scope.month].getDays ($scope.year));
                 }
+                $scope.date = new Date ($scope.year, $scope.month, $scope.day);
             };
         }
     };

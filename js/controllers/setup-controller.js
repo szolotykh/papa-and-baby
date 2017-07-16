@@ -1,9 +1,6 @@
 angular.module('PapaAndBaby')
 .controller('setupCtrl', ['$scope', '$window',  function($scope, $window) {
-    //if ($scope.day && $scope.month && $scope.year){
-    //    $scope.selectedDate = new Date ($scope.year, $scope.month, $scope.day);
-    //}
-    function GenerateConfigString (lover1, lover2, date){
+    function _GenerateConfigString (lover1, lover2, date){
         var ob = new Object ();
         ob.l1 = lover1;
         ob.l2 = lover2;
@@ -12,9 +9,8 @@ angular.module('PapaAndBaby')
     }
 
     function OnContinue (){
-        var selectedDate = new Date ($scope.year, $scope.month, $scope.day);
-        if (selectedDate){
-            var configStr = GenerateConfigString ($scope.iLover1, $scope.iLover2, selectedDate);
+        if ($scope.date){
+            var configStr = _GenerateConfigString ($scope.iLover1, $scope.iLover2, $scope.date);
             $window.location.href = '#/?' + configStr;
         }
     }
