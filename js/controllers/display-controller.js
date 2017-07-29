@@ -25,7 +25,7 @@ angular.module('PapaAndBaby')
                 {
                 throw "Validation error.";
                 }
-            $scope.days = days + " Days";
+            $scope.days = days;
         }
         catch (e){
             $window.location.href = '#/setup/';
