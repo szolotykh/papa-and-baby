@@ -1,4 +1,5 @@
 body{
+    font-family: 'Playfair Display';
     background-image: url('../img/background.jpg');
 }
 
@@ -14,4 +15,14 @@ body{
 .glass span {
   color: rgba(0, 0, 0, 0.7);
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=50)";
+}
+
+.settings {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    color: rgba(0, 0, 0, 0.1);
+}
+.settings:hover {
+    color: rgba(0, 0, 0, 0.4);
 }

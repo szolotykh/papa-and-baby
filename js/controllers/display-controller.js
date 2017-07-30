@@ -34,4 +34,8 @@ angular.module('PapaAndBaby')
     else{
         $window.location.href = '#/setup/';
     }
+
+    $scope.OnSettingClick = function (){
+        $window.location.href = '#/setup/';
+    }
 }]);
