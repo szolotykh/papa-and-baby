@@ -1,5 +1,13 @@
 angular.module('PapaAndBaby')
 .controller('displayCtrl', ['$scope', '$routeParams', '$window',  function($scope, $routeParams, $window) {
+    console.log($window.innerHeight);
+    console.log($window.innerWidth);
+    $scope.aspect = $window.innerWidth/$window.innerHeight;
+    angular.element($window).bind('resize', function(){
+         $scope.aspect = $window.innerWidth/$window.innerHeight;
+         console.log($scope.aspect);
+       });
+    console.log($scope.aspect);
 
     var params = Object.keys($routeParams);
     if(params.length == 1){
